@@ -1,0 +1,33 @@
+{
+  "skills": [
+    {
+      "category": "Frontend",
+      "items": [
+        "HTML5 & CSS3",
+        "JavaScript (ES6+)",
+        "React / Next.js",
+        "Tailwind CSS"
+      ]
+    },
+    {
+      "category": "Backend",
+      "items": ["Node.js", "Express", "Python", "SQL / NoSQL"]
+    },
+    {
+      "category": "Tools & Others",
+      "items": ["Git & GitHub", "Docker", "Figma", "Vercel / AWS"]
+    }
+  ],
+  "projects": [
+    {
+      "title": "E-Commerce Platform",
+      "description": "A fully functional e-commerce web application with user authentication, state management, and a robust payment gateway integration.",
+      "tech": ["React", "Node.js", "Stripe"]
+    },
+    {
+      "title": "Task Management App",
+      "description": "A beautiful drag-and-drop task management tool built to increase productivity. Features real-time updates and dark mode.",
+      "tech": ["Next.js", "Firebase", "Tailwind"]
+    }
+  ]
+}

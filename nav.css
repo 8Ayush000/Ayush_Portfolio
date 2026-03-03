@@ -1,0 +1,597 @@
+/* 
+   Modern Portfolio Styles
+   Theme: Dark Glassmorphism 
+*/
+
+:root {
+  --bg-color: #282c33;
+  --text-main: #ffffff;
+  --text-muted: #abb2bf;
+  --primary: #c778dd;
+  --secondary: #e06c75;
+  --card-bg: transparent; /* Developer minimalist style */
+  --border-color: #abb2bf;
+  --glass-nav: #282c33; /* Solid background, no glass */
+  --input-bg: transparent;
+  --blur: none;
+  --transition: 0.3s ease;
+}
+
+[data-theme="light"] {
+  --bg-color: #ffffff;
+  --text-main: #282c33;
+  --text-muted: #5c6370;
+  --primary: #c778dd; /* Keep purple for light theme too for branding */
+  --secondary: #e06c75;
+  --card-bg: transparent;
+  --border-color: #abb2bf;
+  --glass-nav: #ffffff;
+  --input-bg: transparent;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family:
+    "Fira Code", monospace; /* Use monospace everywhere for terminal feel */
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition:
+    background-color var(--transition),
+    color var(--transition);
+}
+
+/* Typography & Utilities */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-main);
+  font-weight: 600;
+  font-family: "Fira Code", monospace;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+ul {
+  list-style: none;
+}
+
+.section {
+  padding: 100px 10%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 3rem;
+  width: 100%;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.section-title .nav-hash {
+  color: var(--primary);
+  margin-right: 5px;
+  font-family: "Fira Code", monospace;
+}
+
+.section-line {
+  flex-grow: 1;
+  height: 1px;
+  background-color: var(--primary);
+  opacity: 0.3;
+  max-width: 300px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 1px solid var(--primary); /* Thin border */
+  border-radius: 0; /* Sharp corners */
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 1rem;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  font-family: "Fira Code", monospace;
+  background: transparent;
+  color: var(--text-main);
+}
+
+.btn-primary {
+  border-color: var(--primary);
+}
+
+.btn-primary:hover {
+  background: var(--primary);
+  color: var(--bg-color); /* Invert text on hover */
+  transform: none; /* Remove translation for brutalist feel */
+}
+
+.btn-secondary {
+  border-color: var(--border-color);
+  color: var(--text-muted);
+}
+
+.btn-secondary:hover {
+  border-color: var(--primary);
+  color: var(--text-main);
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--glass-nav);
+  border-bottom: 1px solid var(--border-color);
+  z-index: 1000;
+  padding: 15px 10%;
+  transition: var(--transition);
+}
+
+.navbar nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600; /* Adjusted weight for monospace */
+  letter-spacing: 1px;
+}
+
+.logo span {
+  color: var(--primary);
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links li {
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: "Fira Code", monospace;
+  color: var(--text-muted);
+}
+
+.nav-links li .nav-hash {
+  color: var(--primary);
+  margin-right: 5px;
+}
+
+.nav-links li a {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links li a:hover {
+  color: var(--text-main);
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-main);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 50%;
+  transition: var(--transition);
+}
+
+.theme-toggle-btn:hover {
+  background: var(--card-bg);
+  color: var(--primary);
+}
+
+.theme-toggle-btn svg {
+  width: 20px;
+  height: 20px;
+} /* Hero Section */
+.hero {
+  position: relative;
+  padding-top: 150px;
+}
+
+.greeting {
+  color: var(--primary);
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.name {
+  font-size: clamp(28px, 4vw, 56px); /* Slightly smaller for monospace */
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: var(--text-main);
+}
+
+.name .accent {
+  color: var(--primary);
+}
+
+.subtitle {
+  font-size: clamp(30px, 5vw, 60px);
+  color: var(--text-muted);
+  line-height: 1.1;
+  margin-bottom: 30px;
+}
+
+.description {
+  max-width: 600px;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 20px;
+}
+
+/* About Section */
+.about {
+  align-items: flex-start;
+}
+
+.about-content {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+  max-width: 650px;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+.about-text p {
+  margin-bottom: 20px;
+}
+
+.about-image-container {
+  flex: 0 0 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 0; /* Remove rounded corners */
+  border: 1px solid var(--border-color);
+  box-shadow: none; /* Remove soft shadow */
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+  background-color: var(--card-bg);
+}
+
+/* Skills Section */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  width: 100%;
+}
+
+.skill-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 0; /* Sharp edges */
+  padding: 30px;
+  transition: var(--transition);
+}
+
+.skill-card:hover {
+  transform: none; /* Remove floating effect */
+  border-color: var(--primary);
+}
+
+.skill-card h3 {
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.skill-card h3::before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--primary);
+}
+
+.skill-card ul li {
+  color: var(--text-muted);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.skill-card ul li::before {
+  content: "▹";
+  color: var(--primary);
+  margin-right: 10px;
+}
+
+/* Projects Section */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  width: 100%;
+}
+
+.project-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 0; /* Sharp edges */
+  padding: 0; /* Adjusting padding for standard card layout */
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: none; /* No float */
+  border-color: var(--primary);
+}
+
+.project-content {
+  padding: 20px;
+  flex-grow: 1;
+}
+
+.project-overline {
+  color: var(--primary); /* Changed to primary accent */
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+  text-transform: lowercase;
+  letter-spacing: 1px;
+}
+
+.project-title {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.project-description {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin-bottom: 30px;
+}
+
+.project-tech {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 0;
+  border-top: 1px solid var(--border-color);
+  padding: 15px 20px;
+}
+
+.project-tech li {
+  font-family: "Fira Code", monospace;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Contact Section */
+.contact {
+  text-align: center;
+  align-items: center;
+}
+
+.contact .section-title {
+  margin-bottom: 20px;
+}
+
+.contact-desc {
+  max-width: 600px;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+}
+
+.btn-large {
+  padding: 16px 40px;
+  font-size: 1.1rem;
+}
+
+/* Contact Form Styles */
+.contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  width: 100%;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 0; /* Sharp corners */
+  border: 1px solid var(--border-color);
+  background: var(--input-bg);
+  color: var(--text-main);
+  font-family: "Fira Code", monospace;
+  font-size: 1rem;
+  transition: var(--transition);
+  outline: none;
+}
+
+.form-control::placeholder {
+  color: var(--text-muted);
+}
+
+.form-control:focus {
+  border-color: var(--primary);
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Footer */
+footer {
+  padding: 30px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--border-color);
+}
+
+/* Scroll Animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.8s ease-out,
+    transform 0.8s ease-out;
+}
+
+.fade-in.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.navbar.scrolled {
+  padding: 10px 10%;
+  background: var(--glass-nav);
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 6px;
+  z-index: 1001;
+}
+
+.menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-main);
+  transition: all 0.3s ease-in-out;
+  border-radius: 3px;
+}
+
+/* Mobile Menu Active State Animation */
+.menu-toggle.is-active .bar:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.menu-toggle.is-active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.is-active .bar:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background: var(--bg-color);
+    transition: right 0.4s ease-in-out;
+    gap: 40px;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-links li {
+    font-size: 1.5rem;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+  }
+
+  .section {
+    padding: 80px 5%;
+  }
+
+  .hero-graphics {
+    display: none;
+  }
+
+  .name {
+    font-size: 3rem;
+  }
+
+  .subtitle {
+    font-size: 2rem;
+  }
+}

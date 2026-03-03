@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ayush Tyagi | Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio of Ayush Tyagi, a passionate developer."
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="nav.css" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <header class="navbar">
+      <nav>
+        <div class="logo">Ayush Tyagi<span>.</span></div>
+        <div class="menu-toggle" id="mobile-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <ul class="nav-links">
+          <li>
+            <a href="#home"><span class="nav-hash">#</span>home</a>
+          </li>
+          <li>
+            <a href="#projects"><span class="nav-hash">#</span>works</a>
+          </li>
+          <li>
+            <a href="#about"><span class="nav-hash">#</span>about-me</a>
+          </li>
+          <li>
+            <a href="#skills"><span class="nav-hash">#</span>skills</a>
+          </li>
+          <li>
+            <a href="#contact"><span class="nav-hash">#</span>contacts</a>
+          </li>
+          <li>
+            <button
+              id="theme-toggle"
+              class="theme-toggle-btn"
+              aria-label="Toggle theme"
+            >
+              <svg
+                class="sun-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                style="display: none"
+              >
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+              <svg
+                class="moon-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
+                ></path>
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Home / Hero Section -->
+      <section id="home" class="hero section fade-in">
+        <div class="hero-content">
+          <h1 class="name">
+            Ayush is a <span class="accent">web designer</span> and
+            <span class="accent">front-end developer</span>
+          </h1>
+          <p class="description">
+            He crafts responsive websites where technologies meet creativity
+          </p>
+          <div class="hero-cta">
+            <a href="#contact" class="btn btn-primary">Contact me!!</a>
+            <!-- Replace 'resume.pdf' with the actual path to your resume file inside this folder -->
+            <a
+              href="resume.pdf"
+              class="btn btn-secondary"
+              target="_blank"
+              download
+              >Download Resume</a
+            >
+          </div>
+        </div>
+      </section>
+      <!-- About Section -->
+      <section id="about" class="about section fade-in">
+        <div class="section-header">
+          <h2 class="section-title"><span class="nav-hash">#</span>about-me</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              Hello! I'm Ayush, and I enjoy creating things that live on the
+              internet. My interest in web development started when I decided to
+              try editing custom Tumblr themes, which taught me a lot about HTML
+              & CSS!
+            </p>
+            <p>
+              Fast-forward to today, and I've had the privilege of building
+              software and web applications. My main focus these days is
+              building accessible, inclusive products and digital experiences.
+            </p>
+          </div>
+          <div class="about-image-container">
+            <!-- Replace 'profile.jpg' with your actual photo file in the same folder -->
+            <img
+              src="profile.jpg"
+              alt="Ayush Tyagi - Profile Photo"
+              class="profile-img"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills" class="skills section fade-in">
+        <div class="section-header">
+          <h2 class="section-title"><span class="nav-hash">#</span>skills</h2>
+          <div class="section-line"></div>
+        </div>
+        <div id="skills-container" class="skills-grid">
+          <!-- Skills injected by JS -->
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="projects section fade-in">
+        <div class="section-header">
+          <h2 class="section-title"><span class="nav-hash">#</span>projects</h2>
+          <div class="section-line"></div>
+        </div>
+        <div id="projects-container" class="projects-grid">
+          <!-- Projects injected by JS -->
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="contact section fade-in">
+        <div class="section-header">
+          <h2 class="section-title"><span class="nav-hash">#</span>contacts</h2>
+          <div class="section-line"></div>
+        </div>
+        <p class="contact-desc">
+          I'm interested in freelance opportunities. However, if you have other
+          request or question, don't hesitate to contact me
+        </p>
+
+        <form
+          action="https://api.web3forms.com/submit"
+          method="POST"
+          class="contact-form"
+        >
+          <!-- Replace with your actual Web3Forms Access Key -->
+          <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+
+          <div class="form-group">
+            <input
+              type="text"
+              name="name"
+              id="name"
+              required
+              placeholder="Your Name"
+              class="form-control"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="email"
+              name="email"
+              id="email"
+              required
+              placeholder="Your Email"
+              class="form-control"
+            />
+          </div>
+          <div class="form-group">
+            <textarea
+              name="message"
+              id="message"
+              rows="5"
+              required
+              placeholder="Your Message"
+              class="form-control"
+            ></textarea>
+          </div>
+
+          <input
+            type="checkbox"
+            name="botcheck"
+            class="hidden"
+            style="display: none"
+          />
+
+          <button type="submit" class="btn btn-primary btn-large">
+            Send Message
+          </button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>Designed & Built by Ayush Tyagi &copy; 2024</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
