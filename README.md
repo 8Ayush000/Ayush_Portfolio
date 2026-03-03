@@ -2,12 +2,6 @@
 
 A modern, responsive personal portfolio website built to showcase my skills, projects, and professional experience. It features a developer-centric dark aesthetic inspired by terminal interfaces, smooth scrolling, and dynamic data loading.
 
-## 📸 Screenshots
-
-### Desktop View
-
-![Modern Dark Portfolio View](./screenshot.png)
-
 ## 🚀 Technologies Used
 
 - **HTML5**: Semantic and accessible markup.
@@ -28,19 +22,30 @@ A modern, responsive personal portfolio website built to showcase my skills, pro
 ├── index.html       # Main HTML file with content semantics
 ├── nav.css          # CSS styles (layout, colors, animations, media queries)
 ├── script.js        # JavaScript logic (mobile menu, scroll reveals)
-├── screenshot.png   # Desktop screenshot preview
 ```
 
-## 🛠️ Usage
+## 🛠️ Usage & Setup
 
-To view the portfolio, simply open `index.html` in any modern web browser or use a local development server like Live Server (VSCode extension).
+To view the portfolio locally, simply open `index.html` in any modern web browser or use a local development server like Live Server (VSCode extension).
 
 ```bash
 # Example with Node.js http-server
 npx http-server .
 ```
 
-## � Development Insights
+### Contact Form Setup
+
+The contact form uses [Web3Forms](https://web3forms.com/) for serverless email forwarding. To receive emails:
+
+1. Go to Web3Forms and get your free access key.
+2. Open `index.html` and locate the `<input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">` field.
+3. Replace `"YOUR_ACCESS_KEY_HERE"` with your actual API key.
+
+### Content Editing
+
+All skills and project data are dynamically loaded from `data.json`. To update your portfolio, simply edit the JSON file—the UI automatically populates the new data.
+
+## 💡 Development Insights
 
 ### Stack Choice
 
@@ -56,9 +61,9 @@ Achieving an aesthetic that straddles the line between a raw "terminal" look and
 
 ### Future Improvements
 
-- **Contact Form**: Integrate a serverless form provider (e.g., Web3Forms) for live email submission.
-- **Project Filtering**: Add tags to filter the projects grid dynamically.
+- **Project Filtering**: Add functional tags to filter the projects grid dynamically.
+- **Blog Section**: Integrate a simple markdown-based blog parser to showcase writing within the same aesthetic.
 
-## �📄 License & Credits
+## 📄 License & Credits
 
 Designed & Built by **Ayush Tyagi**. All rights reserved.
